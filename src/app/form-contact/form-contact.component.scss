@@ -1,0 +1,28 @@
+form{
+    margin-top: 3rem!important;
+    width: 50%;
+    margin: auto;
+    button{
+        margin-left: 2rem;
+        color: white;
+        background: deeppink;
+    }
+}
+
+::ng-deep .mat-form-field {
+    .mat-input-element {
+        color: slategray;
+    }
+    .mat-form-field-label {
+        color: white;
+    }
+    .mat-form-field-underline {
+        background-color: slategray;
+    }
+    .mat-form-field-ripple {
+        background-color: slategray;
+    }
+    .mat-form-field-required-marker {
+        color: red;
+    }
+}

@@ -1,0 +1,31 @@
+.contactListTitle{
+    padding-left: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.mat-toolbar-single-row{
+    background-color: #99BDE1;
+    padding: 2rem;
+    color: white;
+    span{
+        font-size: 2rem;
+    }
+}
+.container{
+   display: flex;
+   margin-top: 2rem;
+   div{
+        width: 60%;
+        color: black;
+        .mat-card{
+            border-radius: 0;
+        }
+   }
+   .selected{
+       color: white;
+   }
+   .updateComponent{ 
+        margin-left: 2rem;
+        width: 50%;
+   }
+}

@@ -1,0 +1,9 @@
+<div>
+    <mat-card>
+        <span>Nom complet:</span> <mat-card-title>{{isFocused ? keyUpVal : inputVal}}</mat-card-title>
+        <span>Pseudo:</span> <mat-card-title>{{nickName}}</mat-card-title>
+        <span>Email:</span> <mat-card-title>{{email}}</mat-card-title>
+
+    </mat-card>
+    <input type="text" value="{{inputVal}}" (change)="onChangeEvent($event)" ngClass="{{visibleInput}}" (keyup)="onKeyUp($event)">
+</div>

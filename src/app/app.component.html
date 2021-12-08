@@ -1,0 +1,27 @@
+
+<div>
+  <mat-toolbar>
+    <span>Gestion de mes contacts</span>
+  </mat-toolbar>
+  
+  <div class="childComponent">
+    <app-form-contact (newContactEvent)="newContact($event)"></app-form-contact>
+    
+  </div>
+</div>
+<br/>
+<br/>
+<hr>
+
+<div class="container">
+  <div>
+    <h1 *ngIf="contacts.length > 0; else elseBlock" class="contactListTitle">Liste des contacts</h1>
+    <ng-template #elseBlock><h1 class="contactListTitle">La liste des contact est vide !</h1></ng-template>
+    <mat-card *ngFor="let contact of contacts; let i = index"
+      [ngClass]="{'selected': selectedItem === i}"
+      (click)="onTitleValue(contact, i)">
+      <mat-card-title>{{ contact.fullName }}</mat-card-title>
+    </mat-card>
+  </div>
+  <app-update-contact (keyUpRes)="newUpdated($event)" class="updateComponent" [visibleInput]="visibleInput" [inputVal]="inputValue" [nickName]="nickName" [email]="email"></app-update-contact>
+</div>

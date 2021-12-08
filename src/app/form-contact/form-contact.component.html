@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSubmitContact()">
+    <mat-form-field appearance="fill" class = "tp-full-width">
+      <input (click)="checkPlaceHolder()" (blur)="checkPlaceHolder()" matInput [formControl] = "fullNameFormControl" placeholder="Nom & Prénom">
+   </mat-form-field>
+   <mat-form-field appearance="fill" class = "tp-full-width">
+      <input (click)="checkPlaceHolder()" (blur)="checkPlaceHolder()" placeholder="Pseudo" matInput [formControl] = "nickNameFormControl">
+      <mat-error *ngIf = "nickNameFormControl.hasError('nickName') 
+         && !nickNameFormControl.hasError('required')">
+         La longueur ne peut pas être inférieur à 3 caractères !
+      </mat-error>
+      <mat-error *ngIf = "nickNameFormControl.hasError('required')">
+         Le pseudo est <strong>obligatoire</strong>
+      </mat-error>
+   </mat-form-field>
+   <mat-form-field appearance="fill" class = "tp-full-width">
+      <input (click)="checkPlaceHolder()" (blur)="checkPlaceHolder()" placeholder="Email" matInput [formControl] = "emailFormControl">
+      <mat-error *ngIf = "emailFormControl.hasError('email')
+         && !emailFormControl.hasError('required')">
+         Entrez une adresse email valide !
+      </mat-error>
+      <mat-error *ngIf = "emailFormControl.hasError('required')">
+        L'adresse email est <strong>obligatoire</strong>
+      </mat-error>
+   </mat-form-field>
+   <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+      Ajouter
+    </button>
+  </form>
